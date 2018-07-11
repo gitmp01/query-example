@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd1c2047-bc41-41a6-a221-adddfb30c0f6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/cordapp/cordapp.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/cordapp/cordapp_integrationTest.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/cordapp/cordapp_main.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/cordapp/cordapp_test.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/query-example_integrationTest.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/query-example_main.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/query-example_test.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt" afterPath="$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -65,13 +53,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExampleFlow.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ExampleFlow.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+            <state relative-caret-position="171">
+              <caret line="32" column="74" lean-forward="false" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
               <folding>
-                <element signature="e#21#639#0" expanded="true" />
+                <element signature="e#21#735#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -820,10 +808,10 @@
       <list>
         <option value="$PROJECT_DIR$/gradle.properties" />
         <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/cordapp/build.gradle" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt" />
       </list>
     </option>
   </component>
@@ -1078,24 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding>
-            <element signature="e#21#639#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="80" column="71" lean-forward="false" selection-start-line="80" selection-start-column="71" selection-end-line="80" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cordapp/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1109,6 +1079,24 @@
         <state relative-caret-position="15">
           <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="80" column="71" lean-forward="false" selection-start-line="80" selection-start-column="71" selection-end-line="80" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="32" column="74" lean-forward="false" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+          <folding>
+            <element signature="e#21#735#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

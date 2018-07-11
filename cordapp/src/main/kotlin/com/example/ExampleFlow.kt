@@ -2,7 +2,9 @@ package com.example
 
 import co.paralleluniverse.fibers.Suspendable
 import it.oraclize.cordapi.OraclizeUtils
+import it.oraclize.cordapi.entities.ProofType
 import it.oraclize.cordapi.examples.contracts.CashIssueContract
+import it.oraclize.cordapi.examples.flows.Example
 import it.oraclize.cordapi.examples.states.CashOwningState
 import it.oraclize.cordapi.flows.OraclizeQueryAwaitFlow
 import net.corda.core.contracts.Command
@@ -22,12 +24,13 @@ class ExampleFlow : FlowLogic<SignedTransaction>() {
 
     companion object {
         object ORACLIZE_ANSWER : ProgressTracker.Step("Oraclize answer")
+        object VERIFYING_PROOF : ProgressTracker.Step("Verifying the proof")
         object TX_BUILDING : ProgressTracker.Step("Transaction building")
         object TX_VERIFYING : ProgressTracker.Step("Verifying")
         object TX_SIGNATURES : ProgressTracker.Step("Signatures")
         object TX_FINAL : ProgressTracker.Step("Finalizing")
 
-        fun tracker() = ProgressTracker(ORACLIZE_ANSWER, TX_BUILDING, TX_VERIFYING, TX_SIGNATURES, TX_FINAL)
+        fun tracker() = ProgressTracker(ORACLIZE_ANSWER, VERIFYING_PROOF, TX_BUILDING, TX_VERIFYING, TX_SIGNATURES, TX_FINAL)
 
         val console = loggerFor<ExampleFlow>()
     }
@@ -41,7 +44,16 @@ class ExampleFlow : FlowLogic<SignedTransaction>() {
 
         progressTracker.currentStep = ORACLIZE_ANSWER
         val issueState = CashOwningState(10, ourIdentity)
-        val answer = subFlow(OraclizeQueryAwaitFlow("identity", "hello world"))
+        val answer = subFlow(OraclizeQueryAwaitFlow("URL",
+                "json(https://www.therocktrading.com/api/ticker/BTCEUR).result.0.last",
+                ProofType.TLSNOTARY))
+
+        val proofVerificationTool = OraclizeUtils.ProofVerificationTool()
+
+        val verified = proofVerificationTool.verifyProof(answer.proof!!)
+
+
+        console.info("Proof verified!")
 
         val issueCmd = Command(CashIssueContract.Commands.Issue(), listOf(ourIdentity.owningKey))
         val answerCmd = Command(answer, oracle.owningKey)

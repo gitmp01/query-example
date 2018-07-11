@@ -53,9 +53,8 @@ class ExampleFlow : FlowLogic<SignedTransaction>() {
         val proofVerificationTool = OraclizeUtils.ProofVerificationTool()
 
         val verified = proofVerificationTool.verifyProof(answer.proof!!)
-
-
-        console.info("Proof verified!")
+        
+        console.info(if (verified) "Proof verified!" else "Proof not verified")
 
         val issueCmd = Command(CashIssueContract.Commands.Issue(), listOf(ourIdentity.owningKey))
         val answerCmd = Command(answer, oracle.owningKey)

@@ -7,6 +7,7 @@ import it.oraclize.cordapi.examples.contracts.CashIssueContract
 import it.oraclize.cordapi.examples.flows.Example
 import it.oraclize.cordapi.examples.states.CashOwningState
 import it.oraclize.cordapi.flows.OraclizeQueryAwaitFlow
+import it.oraclize.cordapi.flows.OraclizeSignFlow
 import net.corda.core.contracts.Command
 import net.corda.core.contracts.StateAndContract
 import net.corda.core.flows.*
@@ -15,6 +16,7 @@ import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
 import net.corda.core.utilities.loggerFor
+import java.util.function.Predicate
 
 
 @InitiatingFlow
@@ -70,13 +72,18 @@ class ExampleFlow : FlowLogic<SignedTransaction>() {
         progressTracker.currentStep = TX_VERIFYING
         tx.verify(serviceHub)
 
+        val filtering = OraclizeUtils()::filtering
+        val ftx = tx.toWireTransaction(serviceHub).buildFilteredTransaction(
+                Predicate { filtering(oracle.owningKey, it) }
+        )
+
+        val oracleSignature = subFlow(OraclizeSignFlow(ftx))
 
         progressTracker.currentStep = TX_SIGNATURES
-        val signedOnce = serviceHub.signInitialTransaction(tx)
-
+        val signed = serviceHub.signInitialTransaction(tx).withAdditionalSignature(oracleSignature)
 
         progressTracker.currentStep = TX_FINAL
-        return subFlow(FinalityFlow(signedOnce))
+        return subFlow(FinalityFlow(signed))
 
     }
 }

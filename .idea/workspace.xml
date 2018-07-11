@@ -56,10 +56,10 @@
       <file leaf-file-name="ExampleFlow.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="32" column="74" lean-forward="false" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+            <state relative-caret-position="737">
+              <caret line="82" column="18" lean-forward="false" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
               <folding>
-                <element signature="e#21#735#0" expanded="true" />
+                <element signature="e#21#821#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1092,10 +1092,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cordapp/src/main/kotlin/com/example/ExampleFlow.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="32" column="74" lean-forward="false" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+        <state relative-caret-position="737">
+          <caret line="82" column="18" lean-forward="false" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
           <folding>
-            <element signature="e#21#735#0" expanded="true" />
+            <element signature="e#21#821#0" expanded="true" />
           </folding>
         </state>
       </provider>
